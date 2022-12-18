@@ -17,6 +17,7 @@ namespace WindowsFormsApp1
         List<Particle> particles = new List<Particle>(); //список частиц
         List<Emitter> emitters = new List<Emitter>();
         Emitter emitter;
+        private Radar radar;
 
         public Form1()
         {
@@ -30,8 +31,8 @@ namespace WindowsFormsApp1
                 Spreading = 10,
                 SpeedMin = 10,
                 SpeedMax = 10,
-                ColorFrom = Color.Gold,
-                ColorTo = Color.FromArgb(0, Color.Red),
+                ColorFrom = Color.PowderBlue,
+                ColorTo = Color.FromArgb(0, Color.SteelBlue),
                 ParticlesPerTick = 10,
                 X = picDisplay.Width / 2,
                 Y = picDisplay.Height / 2,
@@ -54,6 +55,14 @@ namespace WindowsFormsApp1
                 Y = picDisplay.Height / 2,
             });
 
+            radar = new Radar
+            {
+                X = picDisplay.Width / 2 - 100,
+                Y = picDisplay.Height / 2,
+            };
+
+            emitter.impactPoints.Add(radar);
+            picDisplay.MouseWheel += picDisplay_MouseWheel;
 
         }
         
@@ -70,13 +79,31 @@ namespace WindowsFormsApp1
             picDisplay.Invalidate();
         }
 
+        private void picDisplay_MouseWheel(object sender, MouseEventArgs e)
+        {
+            if (e.Delta > 0)
+            {
+                radar.ChangeSize(-2);
+            }
+            else if (e.Delta < 0)
+            {
+                radar.ChangeSize(2);
+            }
+        }
+
         private int MousePositionX = 0;
         private int MousePositionY = 0;
 
         private void picDisplay_MouseMove(object sender, MouseEventArgs e)
         {
-            emitter.MousePositionX = e.X;
-            emitter.MousePositionY = e.Y;
+            foreach (var emitter in emitters)
+            {
+                emitter.MousePositionX = e.X;
+                emitter.MousePositionY = e.Y;
+            }
+
+            radar.X = e.X;
+            radar.Y = e.Y;
         }
 
         private void tbMakeSunny_Scroll(object sender, EventArgs e)
