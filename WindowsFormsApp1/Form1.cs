@@ -15,7 +15,8 @@ namespace WindowsFormsApp1
     {
 
         List<Particle> particles = new List<Particle>(); //список частиц
-        Emitter emitter = new Emitter();
+        List<Emitter> emitters = new List<Emitter>();
+        Emitter emitter;
 
         public Form1()
         {
@@ -23,13 +24,28 @@ namespace WindowsFormsApp1
 
             picDisplay.Image = new Bitmap(picDisplay.Width, picDisplay.Height); //привязали изображение
 
-            emitter.gravityPoints.Add(new Point(
-            picDisplay.Width, picDisplay.Height / 2
-            ));
+            this.emitter = new TopEmitter
+            {
+                Width = picDisplay.Width,
+                GravitationY = 0.50f,
 
-            emitter.gravityPoints.Add(new Point(
-            picDisplay.Width * 0, picDisplay.Height / 2
-            ));
+                //   ColorFrom = Color.Gold,
+                //  ColorTo = Color.FromArgb(0, Color.AliceBlue),
+            };
+
+            emitters.Add(this.emitter); // все равно добавляю в список emitters, чтобы он рендерился и обновлялся
+
+            emitter.impactPoints.Add(new GravityPoint
+            {
+                X = picDisplay.Width - 30,
+                Y = picDisplay.Height / 2 + 100,
+            });
+
+            emitter.impactPoints.Add(new GravityPoint
+            {
+                X = picDisplay.Width * 0 + 30,
+                Y = picDisplay.Height / 2 + 100,
+            });
         }
         
         private void timer1_Tick(object sender, EventArgs e)
@@ -38,7 +54,7 @@ namespace WindowsFormsApp1
 
             using (var g = Graphics.FromImage(picDisplay.Image))
             {
-                g.Clear(Color.Black);
+                g.Clear(Color.FromArgb(0, 0, 0, 0));
                 emitter.Render(g);
             }
 
@@ -52,6 +68,12 @@ namespace WindowsFormsApp1
         {
             emitter.MousePositionX = e.X;
             emitter.MousePositionY = e.Y;
+        }
+
+        private void tbDirection_Scroll(object sender, EventArgs e)
+        {
+            emitter.Direction = tbDirection.Value;
+            lblDirection.Text = $"{tbDirection.Value}°";
         }
     }
 }
