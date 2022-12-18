@@ -17,6 +17,7 @@ namespace WindowsFormsApp1
         {
             foreach (var particle in particles)
             {
+                
                 particle.Life -= 1;
 
                 if (particle.Life < 0)
