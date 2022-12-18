@@ -79,10 +79,24 @@ namespace WindowsFormsApp1
             emitter.MousePositionY = e.Y;
         }
 
-        private void tbDirection_Scroll(object sender, EventArgs e)
+        private void tbMakeSunny_Scroll(object sender, EventArgs e)
         {
-            emitter.Direction = tbDirection.Value;
-            lblDirection.Text = $"{tbDirection.Value}°";
+            lblSunny.Text = "It's rainy T_T";
+            foreach (var p in emitter.impactPoints)
+            {
+                if (p is AntiGravityPoint) // так как impactPoints не обязательно содержит поле Power, надо проверить на тип 
+                {
+                    (p as AntiGravityPoint).Power = tbMakeSunny.Value;
+                }
+            }
+            if(tbMakeSunny.Value > 80)
+            {
+                lblSunny.Text = "It's sunny *o*";
+            }
+            else
+            {
+                lblSunny.Text = "It's rainy T_T";
+            }
         }
     }
 }

@@ -32,10 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.picDisplay = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.tbDirection = new System.Windows.Forms.TrackBar();
-            this.lblDirection = new System.Windows.Forms.Label();
+            this.tbMakeSunny = new System.Windows.Forms.TrackBar();
+            this.lblSunny = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picDisplay)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbDirection)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbMakeSunny)).BeginInit();
             this.SuspendLayout();
             // 
             // picDisplay
@@ -56,35 +56,38 @@
             this.timer1.Interval = 40;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // tbDirection
+            // tbMakeSunny
             // 
-            this.tbDirection.Location = new System.Drawing.Point(937, 52);
-            this.tbDirection.Maximum = 360;
-            this.tbDirection.Name = "tbDirection";
-            this.tbDirection.Size = new System.Drawing.Size(193, 56);
-            this.tbDirection.TabIndex = 1;
-            this.tbDirection.Scroll += new System.EventHandler(this.tbDirection_Scroll);
+            this.tbMakeSunny.Location = new System.Drawing.Point(928, 34);
+            this.tbMakeSunny.Maximum = 100;
+            this.tbMakeSunny.Name = "tbMakeSunny";
+            this.tbMakeSunny.Size = new System.Drawing.Size(179, 56);
+            this.tbMakeSunny.TabIndex = 1;
+            this.tbMakeSunny.Scroll += new System.EventHandler(this.tbMakeSunny_Scroll);
             // 
-            // lblDirection
+            // lblSunny
             // 
-            this.lblDirection.AutoSize = true;
-            this.lblDirection.Location = new System.Drawing.Point(1126, 52);
-            this.lblDirection.Name = "lblDirection";
-            this.lblDirection.Size = new System.Drawing.Size(0, 16);
-            this.lblDirection.TabIndex = 2;
+            this.lblSunny.AutoSize = true;
+            this.lblSunny.Font = new System.Drawing.Font("Segoe Script", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblSunny.Location = new System.Drawing.Point(928, 93);
+            this.lblSunny.Name = "lblSunny";
+            this.lblSunny.Size = new System.Drawing.Size(226, 55);
+            this.lblSunny.TabIndex = 2;
+            this.lblSunny.Text = "It\'s rainy T_T";
+            this.lblSunny.UseCompatibleTextRendering = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 531);
-            this.Controls.Add(this.lblDirection);
-            this.Controls.Add(this.tbDirection);
+            this.Controls.Add(this.lblSunny);
+            this.Controls.Add(this.tbMakeSunny);
             this.Controls.Add(this.picDisplay);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.picDisplay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbDirection)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbMakeSunny)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -94,8 +97,8 @@
 
         private System.Windows.Forms.PictureBox picDisplay;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.TrackBar tbDirection;
-        private System.Windows.Forms.Label lblDirection;
+        private System.Windows.Forms.TrackBar tbMakeSunny;
+        private System.Windows.Forms.Label lblSunny;
     }
 }
 

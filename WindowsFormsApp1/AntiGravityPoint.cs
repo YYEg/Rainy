@@ -8,7 +8,7 @@ namespace WindowsFormsApp1
 {
     public class AntiGravityPoint : IImpactPoint
     {
-        public int Power = 20; // сила отторжения
+        public int Power = 0; // сила отторжения
 
         public override void ImpactParticle(Particle particle)
         {
