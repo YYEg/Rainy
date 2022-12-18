@@ -44,7 +44,6 @@ namespace WindowsFormsApp1
             {
                 Width = picDisplay.Width,
                 GravitationY = 0.25f,
-                ParticlesPerTick = 10
             };
 
             
@@ -124,6 +123,12 @@ namespace WindowsFormsApp1
             {
                 lblSunny.Text = "It's rainy T_T";
             }
+        }
+
+        private void trackBarParticlesPerTick_Scroll(object sender, EventArgs e)
+        {
+            emitter.ParticlesPerTick = trackBarParticlesPerTick.Value;
+            lblMoreRainDrops.Text = $"It's about : {trackBarParticlesPerTick.Value} raindrops per tick";
         }
     }
 }

@@ -29,7 +29,7 @@ namespace WindowsFormsApp1
         public int RadiusMax = 10; // максимальный радиус частицы
         public int LifeMin = 20; // минимальное время жизни частицы
         public int LifeMax = 100; // максимальное время жизни частицы
-        public int ParticlesPerTick = 1;
+        public int ParticlesPerTick = 10;
 
         public Color ColorFrom = Color.PowderBlue; // начальный цвет частицы
         public Color ColorTo = Color.FromArgb(0, Color.LightSteelBlue); // конечный цвет частиц
