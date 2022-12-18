@@ -8,7 +8,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace WindowsFormsApp1
 {
-    internal class Particle
+    public class Particle
     {
         public int Radius; // радуис частицы
         public float X; // X координата положения частицы в пространстве

@@ -11,7 +11,7 @@ namespace WindowsFormsApp1
     internal class Emitter
     {
         List<Particle> particles = new List<Particle>();
-        public List<Point> gravityPoints = new List<Point>();
+        public List<IImpactPoint> impactPoints = new List<IImpactPoint>();
 
         public int MousePositionX;
         public int MousePositionY;
@@ -42,16 +42,10 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
-                    float gX = gravityPoints[0].X - particle.X;
-                    float gY = gravityPoints[0].Y - particle.Y;
-
-                    
-                    float r2 = gX * gX + gY * gY;
-                    float M = 100; // сила притяжения к точке
-
-                    
-                    particle.SpeedX += (gX) * M / r2;
-                    particle.SpeedY += (gY) * M / r2;
+                    foreach (var point in impactPoints)
+                    {
+                        point.ImpactParticle(particle);
+                    }
 
                     particle.SpeedX += GravitationX;
                     particle.SpeedY += GravitationY;

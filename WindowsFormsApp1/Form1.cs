@@ -24,7 +24,11 @@ namespace WindowsFormsApp1
             picDisplay.Image = new Bitmap(picDisplay.Width, picDisplay.Height); //привязали изображение
 
             emitter.gravityPoints.Add(new Point(
-            picDisplay.Width / 2, picDisplay.Height / 2
+            picDisplay.Width, picDisplay.Height / 2
+            ));
+
+            emitter.gravityPoints.Add(new Point(
+            picDisplay.Width * 0, picDisplay.Height / 2
             ));
         }
         
