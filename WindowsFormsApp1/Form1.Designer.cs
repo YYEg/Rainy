@@ -47,11 +47,12 @@
             this.picDisplay.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picDisplay.BackgroundImage")));
             this.picDisplay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picDisplay.Location = new System.Drawing.Point(-77, -121);
-            this.picDisplay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picDisplay.Margin = new System.Windows.Forms.Padding(2);
             this.picDisplay.Name = "picDisplay";
             this.picDisplay.Size = new System.Drawing.Size(768, 470);
             this.picDisplay.TabIndex = 0;
             this.picDisplay.TabStop = false;
+            this.picDisplay.Click += new System.EventHandler(this.picDisplay_Click);
             this.picDisplay.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picDisplay_MouseMove);
             // 
             // timer1
@@ -63,7 +64,7 @@
             // tbMakeSunny
             // 
             this.tbMakeSunny.Location = new System.Drawing.Point(781, 140);
-            this.tbMakeSunny.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbMakeSunny.Margin = new System.Windows.Forms.Padding(2);
             this.tbMakeSunny.Maximum = 100;
             this.tbMakeSunny.Name = "tbMakeSunny";
             this.tbMakeSunny.Orientation = System.Windows.Forms.Orientation.Vertical;
@@ -116,7 +117,7 @@
             this.Controls.Add(this.lblSunny);
             this.Controls.Add(this.tbMakeSunny);
             this.Controls.Add(this.picDisplay);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.picDisplay)).EndInit();

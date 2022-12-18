@@ -18,6 +18,7 @@ namespace WindowsFormsApp1
         List<Emitter> emitters = new List<Emitter>();
         Emitter emitter;
         private Radar radar;
+        List<RainEater> gravityPoints = new List<RainEater>();
 
         public Form1()
         {
@@ -129,6 +130,19 @@ namespace WindowsFormsApp1
         {
             emitter.ParticlesPerTick = trackBarParticlesPerTick.Value;
             lblMoreRainDrops.Text = $"It's about : {trackBarParticlesPerTick.Value} raindrops per tick";
+        }
+
+        private void picDisplay_Click(object sender, EventArgs e)
+        {
+            var x = Cursor.Position.X;
+            var y = Cursor.Position.Y;
+            RainEater point = new RainEater
+            {
+                X = x,
+                Y = y,
+            };
+            gravityPoints.Add(point);
+            emitter.impactPoints.Add(point);
         }
     }
 }
