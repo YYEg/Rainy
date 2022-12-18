@@ -12,11 +12,8 @@ namespace WindowsFormsApp1
         public float X; // ну точка же, вот и две координаты
         public float Y;
 
-        // абстрактный метод с помощью которого будем изменять состояние частиц
-        // например притягивать
         public abstract void ImpactParticle(Particle particle);
 
-        // базовый класс для отрисовки точечки
         public void Render(Graphics g)
         {
             g.FillEllipse(
