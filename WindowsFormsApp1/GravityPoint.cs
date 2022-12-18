@@ -17,6 +17,7 @@ namespace WindowsFormsApp1
             float gY = Y - particle.Y;
             float r2 = (float)Math.Max(100, gX * gX + gY * gY);
 
+
             particle.SpeedX += gX * Power / r2;
             particle.SpeedY += gY * Power / r2;
         }
