@@ -33,7 +33,6 @@ namespace WindowsFormsApp1
 
         public Color ColorFrom = Color.PowderBlue; // начальный цвет частицы
         public Color ColorTo = Color.FromArgb(0, Color.LightSteelBlue); // конечный цвет частиц
-        
 
         public virtual Particle CreateParticle()
         {
@@ -63,6 +62,9 @@ namespace WindowsFormsApp1
 
                 else
                 {
+                    particle.X += particle.SpeedX;
+                    particle.Y += particle.SpeedY;
+
                     foreach (var point in impactPoints)
                     {
                         point.ImpactParticle(particle);
@@ -70,9 +72,6 @@ namespace WindowsFormsApp1
 
                     particle.SpeedX += GravitationX;
                     particle.SpeedY += GravitationY;
-
-                    particle.X += particle.SpeedX;
-                    particle.Y += particle.SpeedY;
                 }
             }
 

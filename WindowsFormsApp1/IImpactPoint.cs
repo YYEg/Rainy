@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
         public void Render(Graphics g)
         {
             g.FillEllipse(
-                    new SolidBrush(Color.Red),
+                    new SolidBrush(Color.White),
                     X - 5,
                     Y - 5,
                     10,
